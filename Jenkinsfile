@@ -9,10 +9,12 @@ pipeline {
     }
     stage ('Code Analysis') {
       steps{
-         bat "gradle sonarqube"
+        withSonarQubeEnv('sonar') {
+          bat "gradle sonarqube"
+        }
       }
     }
-    stage("Quality gate") {
+    stage("Code Quality") {
       steps {
           waitForQualityGate abortPipeline: true
       }
