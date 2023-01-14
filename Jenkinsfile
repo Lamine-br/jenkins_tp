@@ -34,7 +34,7 @@ pipeline {
     } 
      stage("Notification") {
       steps {
-          bat "gradle publishToSlack" 
+          notifyEvents message: 'Hello <b>world</b>', token: 'Vmg23LVKMDqFBR19m2ttgrSHRSbzDU_K'
       }
     } 
   }
