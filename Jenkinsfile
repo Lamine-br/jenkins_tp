@@ -44,7 +44,7 @@ pipeline {
   }
   post {
       success {
-          mail bcc: '', body: '''Erreur !!''', cc: '', from: '', replyTo: '', subject: 'Problème Survenu', to: 'jl_brahami@esi.dz'
+          mail bcc: '', body: '''Erreur !!''', cc: '', from: '', replyTo: '', subject: 'Probleme Survenu', to: 'jl_brahami@esi.dz'
       }
     }
 }
