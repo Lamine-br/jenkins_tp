@@ -12,5 +12,10 @@ pipeline {
           bat 'gradle sonarQube'
       }
     }
+    stage("Quality gate") {
+      steps {
+          waitForQualityGate abortPipeline: true
+      }
+    }
   }
 }
