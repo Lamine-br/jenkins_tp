@@ -1,17 +1,15 @@
 pipeline {
   agent any
   stages {
-    stage ('test') {
+    stage ('Test') {
       steps{
           bat 'gradle test'
           archiveArtifacts 'build/libs/*.jar'
       }
     }
-    stage ('sonarQube') {
+    stage ('Code Analysis') {
       steps{
-          withSonarQubeEnv('SonarQube') {
-              bat "gradle sonarqube"
-          }
+         bat "gradle sonarqube"
       }
     }
     stage("Quality gate") {
