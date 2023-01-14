@@ -9,7 +9,9 @@ pipeline {
     }
     stage ('sonarQube') {
       steps{
-          bat 'gradle sonarQube'
+          withSonarQubeEnv('SonarQube') {
+              bat "gradle sonarqube"
+          }
       }
     }
     stage("Quality gate") {
