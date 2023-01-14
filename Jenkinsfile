@@ -31,6 +31,6 @@ pipeline {
       steps {
           bat "gradle publish" 
       }
-    }
+    } 
   }
 }
