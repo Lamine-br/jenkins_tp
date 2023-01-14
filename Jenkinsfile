@@ -32,5 +32,10 @@ pipeline {
           bat "gradle publish" 
       }
     } 
+     stage("Notification") {
+      steps {
+          bat "gradle publishToSlack" 
+      }
+    } 
   }
 }
