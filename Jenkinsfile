@@ -4,7 +4,11 @@ pipeline {
     stage ('Test') {
       steps{
           bat 'gradle test'
-          archiveArtifacts 'build/libs/*.jar'
+          cucumber buildStatus: 'UNSTABLE',
+                reportTitle: 'Report',
+                fileIncludePattern: '*/.json',
+                trendsLimit: 10,
+          junit 'build/test-results/test/TEST-Matrix.xml'
       }
     }
     stage ('Code Analysis') {
