@@ -31,7 +31,7 @@ pipeline {
       steps {
           bat "gradle publish" 
       }
-    } 
+    }  
      stage("Notification") {
       steps {
           notifyEvents message: 'Bonsoir <b>mon ami</b>', token: 'Vmg23LVKMDqFBR19m2ttgrSHRSbzDU_K'
