@@ -7,7 +7,7 @@ pipeline {
           cucumber buildStatus: 'UNSTABLE',
                 reportTitle: 'Report',
                 fileIncludePattern: '*/.json',
-                trendsLimit: 10,
+                trendsLimit: 10
           junit 'build/test-results/test/TEST-Matrix.xml'
       }
     }
