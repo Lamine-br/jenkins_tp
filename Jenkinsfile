@@ -29,7 +29,7 @@ pipeline {
     }
     stage("Deploy") {
       steps {
-          uploadArchives 
+          bat "uploadArchives" 
       }
     }
   }
