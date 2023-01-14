@@ -7,5 +7,10 @@ pipeline {
           archiveArtifacts 'build/libs/*.jar'
       }
     }
+    stage ('sonarQube') {
+      steps{
+          bat 'gradle sonarQube'
+      }
+    }
   }
 }
