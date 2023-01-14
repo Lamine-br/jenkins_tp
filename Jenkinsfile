@@ -43,7 +43,7 @@ pipeline {
     }
   }
   post {
-      failure {
+      success {
           mail bcc: '', body: '''Erreur !!''', cc: '', from: '', replyTo: '', subject: 'Problème Survenu', to: 'jl_brahami@esi.dz'
       }
     }
