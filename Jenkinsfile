@@ -41,5 +41,10 @@ pipeline {
           notifyEvents message: 'Bonsoir <b>mon ami</b>', token: 'Vmg23LVKMDqFBR19m2ttgrSHRSbzDU_K'
       }
     }
+    post {
+      failure {
+          mail bcc: '', body: '''Erreur !!''', cc: '', from: '', replyTo: '', subject: 'Problème Survenu', to: 'jl_brahami@esi.dz'
+      }
+    }
   }
 }
