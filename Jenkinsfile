@@ -1,4 +1,4 @@
-pipeline {
+pipeline {  
   agent any
   stages {
     stage ('Test') {
@@ -6,7 +6,7 @@ pipeline {
           bat 'gradle test'
           archiveArtifacts 'build/test-results/'
           cucumber reportTitle: 'Report',
-                   fileIncludePattern: '*/.json',
+                   fileIncludePattern: 'target/report.json',
                    trendsLimit: 10
           junit 'build/test-results/test/TEST-Matrix.xml'
       }
