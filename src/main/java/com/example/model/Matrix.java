@@ -101,7 +101,7 @@ public class Matrix {
 	}
 	@Override
 	public int hashCode() {
-		return 0;
+		return this.ncols;
 	}
 
 }
