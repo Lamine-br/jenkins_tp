@@ -29,7 +29,7 @@ pipeline {
           bat "gradle javadoc"
           archiveArtifacts 'build/libs/*.jar'
           archiveArtifacts 'build/docs/'
-      }
+      } 
     }
     stage("Deploy") {
       steps {
