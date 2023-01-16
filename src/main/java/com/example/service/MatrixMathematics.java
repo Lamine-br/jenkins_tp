@@ -29,7 +29,7 @@ public class MatrixMathematics {
 			return (matrix.getValueAt(0, 0) * matrix.getValueAt(1, 1)) - ( matrix.getValueAt(0, 1) * matrix.getValueAt(1, 0));
 		}
 		double sum = 0.0;
-		for (int i=0; i<matrix.getNcols(); i++) {
+		for (int i=0; i<matrix.getNcols(); i++) { 
 			sum += changeSign(i) * matrix.getValueAt(0, i) * determinant(createSubMatrix(matrix, 0, i));
 		}
 		return sum;
