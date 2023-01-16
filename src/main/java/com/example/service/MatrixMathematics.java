@@ -115,10 +115,10 @@ public class MatrixMathematics {
 	 * @throws NoSquareException
 	 */
 	public static Matrix inverse(Matrix matrix) throws NoSquareException,ArithmeticException {
-		try{
-			double res = 1.0 / determinant(matrix);
-			return (transpose(cofactor(matrix)).multiplyByConstant(res));
-		}catch(ArithmeticException e) {
+		double i = determinant(matrix);
+		if(i!=0) {
+			return (transpose(cofactor(matrix)).multiplyByConstant(1.0 / determinant(matrix)));
+		}else{
 			return null;
 		}
 	}
